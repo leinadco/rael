@@ -1,5 +1,6 @@
+console.clear();
 //defining the original images
-const oriImages = {
+/*const oriImages = {
     1: {
         category: ["moon"],
         url: "Images/20221109_215055.jpg",
@@ -240,7 +241,8 @@ const oriImages = {
         category: ["coffee"],
         url: "Images/20240301_072329.jpg",
     },
-};
+};*/
+import { oriImages } from './images.js'; // sau numele fișierului unde ai definit oriImages
 
 //defining the function to render the navigation indication
 function renderIndication() {
@@ -248,10 +250,11 @@ function renderIndication() {
     const options = [5, 10, 20, 40, 80, 160, 320]; //defining the options for the select
     const slectedOption = 10; //defining the selected option
     //defining the indication buttons and select like strings
+
     let indication =
         '<button class="less indiChild" value="-">Less</button>' +
         '<label class="indiChild"></label>' +
-        '<select id="selection" class="indiChild" onchange="activImg(event)">'; //creating the select with the onchange event
+        '<select id="selection" class="indiChild">'; //creating the select with the onchange event
 
     //iterating through the options to render
     options.forEach((option) => {
@@ -269,10 +272,15 @@ function renderIndication() {
         element.innerHTML = indication;
     });
 
-    //adding event listeners to the buttons, this beceause the events are ignored with the innerHTML
+    //adding event listeners to the buttons elements, this because the events are ignored with the innerHTML
     const buttons = document.querySelectorAll(".indication button");
     buttons.forEach((button) => {
         button.addEventListener("click", activImg);
+    });
+    //adding event listeners to the selects Elements, this because the events are ignored with the innerHTML
+    const selects = document.querySelectorAll(".indication select");
+    selects.forEach((select) => {
+        select.addEventListener("click", activImg);
     });
 }
 //defining the function to convert the original images to arrays
@@ -383,7 +391,7 @@ function displayIndication(min, max, total) {
 //defining the function to catch the visualized images in an object
 function cathcVis() {
     const visualizedImg = document.querySelectorAll(".image");
-    const visualizedImgLen = Object.keys(visualizedImg).length;
+    const visualizedImgLen = Number(Object.keys(visualizedImg).length);
     return [visualizedImg, visualizedImgLen];
 }
 //defining the function to get the min and max step, adapted for evry situation:
@@ -396,10 +404,11 @@ function getMinStep(event, visualizedImgLen) {
     let indexBar = label.indexOf("-"); //getting the index of the bar for taking the right indication, max
 
     //defining step depending on the event or first load
+    
     if (event !== "undefined" && event.target.tagName === "SELECT") {
         step = Number(event.target.value);
     } else {
-        select = document.querySelector(".indication select");
+        const select = document.querySelector(".indication select");
         step = Number(select.options[select.options.selectedIndex].value);
     }
 
@@ -414,10 +423,8 @@ function getMinStep(event, visualizedImgLen) {
                 max == visualizedImgLen ||
                 min == visualizedImgLen
             ) {
-                console.log("first +");
                 return;
             } else {
-                console.log("else +");
                 min = Number(label.slice(0, indexSlash)) + step;
                 max += step;
             }
@@ -445,7 +452,6 @@ function getMinStep(event, visualizedImgLen) {
         min = 0;
         max = step;
     }
-
     displayIndication(min, max, visualizedImgLen, event); //calling the function to display the indication
     return [min, max]; //returning the min and max values
 }
@@ -479,6 +485,8 @@ function updateSelect(event) {
 }
 //defining the function that calls the function needed to activate the images, to call entire block when needed
 function activImg(event = "undefined") {
+    
+    //console.log(event.target.tagName);
     const [visualizedImg, visualizedImgLen] = cathcVis(); //calling the function to catch the visualized images
     const [min, max] = getMinStep(event, visualizedImgLen); //calling the function to get the min and max indexes from indication
     activateImg(visualizedImg, visualizedImgLen, min, max); //calling the function to activate the images with the min and max indexes
@@ -567,8 +575,8 @@ function displayNavCategories(oriImages) {
         let nav = "<nav><ul>"; //creating an empty string to store the categories
         //creating an empty array to store the categories
         const categories = []; //iterating through the original images
-        Object.values(oriImages).forEach((value) => {
-            oriCategories = value.category; //getting the categories from the original images
+            Object.values(oriImages).forEach((value) => {
+            const oriCategories = value.category; //getting the categories from the original images
             // iterating through the categories
             for (let i = 0; i < oriCategories.length; i++) {
                 if (!categories.includes(oriCategories[i])) {
@@ -623,7 +631,7 @@ function displayNavCategories(oriImages) {
                     try {
                         sunriseSunset(); //calling the function to chang day/night mode
                     } catch (error) {
-                        console.log("Footer error: " + error); //displaying the error
+                        footer.innerHTML = `<h1 style="padding:10px;">Footer add error: ${error}</h1>`; //displaying the error
                     }
                 }
             }
