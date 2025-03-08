@@ -32,7 +32,7 @@ body {
         rgba(0, 0, 0, 1) 0%,
         rgba(0, 34, 0, 1) 100%
     );*/
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 /*setting header to alway stay at top on scroll*/
 header {
@@ -40,9 +40,12 @@ header {
     top: 0;
     z-index: 100;
 }
+
 /*style for nav, categories' container*/
 nav {
+    
     border-radius: 10px;
+    background: #111;
 }
 /*style for nav day mode*/
 .navDay {
@@ -50,14 +53,17 @@ nav {
 }
 /*style for nav night mode*/
 .navNight {
-    background-color: var(--first-dark-color);
+    border: 3px solid var(--first-dark-color);
 }
 /*style for nav ul to set to flex*/
-nav > ul {
+ul {
     display: flex;
     justify-content: center;
+    margin: 3px;
     padding: 5px;
     flex-wrap: wrap;
+    border: 3px solid var(--first-dark-color);
+    border-radius: 7px;
 }
 /*style for categories in nav*/
 li {

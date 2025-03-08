@@ -213,7 +213,7 @@ export const oriImages = {
       url: "Images/20231201_204914.jpg",
   },
   54: {
-      category: ["monument", "snow"],
+      category: ["monument", "winter"],
       url: "Images/20231207_125214.jpg",
   },
   55: {
@@ -239,6 +239,46 @@ export const oriImages = {
   60: {
       category: ["coffee"],
       url: "Images/20240301_072329.jpg",
+  },
+  61: {
+      category: ["city", "monument"],
+      url: "Images/20240309_181101.jpg",
+  },
+  62: {
+      category: ["moon"],
+      url: "Images/20240320_181430.jpg",
+  },
+  63: {
+      category: ["city", "nature", "winter"],
+      url: "Images/20240320_181657.jpg",
+  },
+  64: {
+      category: ["city", "nature"],
+      url: "Images/20240321_090918.jpg",
+  },
+  65: {
+      category: ["coffee", "love", "office"],
+      url: "Images/20240404_153344.jpg",
+  },
+  66: {
+      category: ["nature", "sky", "sunset"],
+      url: "Images/20240407_185416.jpg",
+  },
+  67: {
+      category: ["nature", "sunset"],
+      url: "Images/20240407_191958.jpg",
+  },
+  68: {
+      category: ["nature"],
+      url: "Images/20240409_130443.jpg",
+  },
+  69: {
+      category: ["coffee", "love"],
+      url: "Images/20240410_222513.jpg",
+  },
+  70: {
+      category: ["italy", "sea"],
+      url: "Images/20240414_115349.jpg",
   },
 };
 
