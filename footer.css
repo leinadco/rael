@@ -1,0 +1,25 @@
+footer {
+    margin: auto;
+    border: 5px solid;
+    border-top: none;
+    border-radius: 15px;
+}
+.footerDay {
+    border-color: var(--first-light-color);
+}
+.footerNight {
+    border-color: var(--first-dark-color);
+}
+footer h1 {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 3px solid;
+    border-top: none;
+}
+.h1Day {
+    border-color: var(--first-light-color);
+}
+.h1Night {
+    border-color: var(--first-dark-color);
+}

@@ -1,1 +1,1 @@
-modificarea culorilor la header... de completat psi pentru noapte/zi
+de adjustat tema la footer, nu functioneaza querySelector

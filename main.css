@@ -1,0 +1,96 @@
+main {
+    padding: 20px;
+    margin: auto;
+    border: 5px solid;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 15px;
+}
+.mainDay {
+    border-color: var(--first-light-color);
+}
+.mainNight {
+    border-color: var(--first-dark-color);
+}
+/*style buttons and indications*/
+.indication {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*style for children of indication container*/
+.indiChild {
+    margin: 2px;
+    padding: 2px;
+    border: none;
+    border-radius: 2px;
+    min-width: 55px;
+}
+/*style for day mode*/
+.indiChildDay {
+    background-color: var(--second-light-color);
+    border: 3px solid var(--second-light-color)
+}
+.indiChildDay:hover {
+    border: 3px solid var(--third-light-color)
+}
+/*style for night mode*/
+.indiChildNight {
+    background-color: var(--second-dark-color);
+    border: 3px solid var(--second-dark-color)
+}
+.indiChildNight:hover {
+    border: 3px solid var(--third-dark-color)
+}
+/*style for images container*/
+.container {
+    margin: auto;
+    display: grid;
+
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;*/ /* orizontal  alignement*/
+    gap: 5px;
+}
+/*style for single image div*/
+.image {
+    /*aspect-ratio: 1 / 1;*/
+    border-radius: 10px;
+    display: flex;
+    /*padding-left: 4px;
+    padding-top: 4px;
+    padding-right: 4px;*/
+}
+/*style for single for day mode*/
+.imageDay {
+    background-color: var(--first-light-color);
+    /*padding: 5px;*/
+}
+.imageDay:hover {
+    background-color: var(--second-light-color);
+    box-shadow: -3px -3px 10px var(--third-light-color);
+}
+/*style for single for night mode*/
+.imageNight {
+    background-color: var(--first-dark-color);
+    /*padding: 5px;*/
+}
+.imageNight:hover {
+    background-color: var(--second-dark-color);
+    box-shadow: -3px -3px 10px var(--third-dark-color);
+}
+/*style single images*/
+img {
+    width: 100%;
+    object-fit: cover; /*ensure that the image doesn't cause distorsions*/
+    aspect-ratio: 1 / 1; /*ensure the squareness of every image*/
+    border-radius: 10px;
+}
+
+/*style for categories under images*/
+.image > p {
+    cursor: default;
+    margin: 5px;
+}

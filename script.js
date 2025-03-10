@@ -243,6 +243,7 @@ console.clear();
     },
 };*/
 import { oriImages } from "./images.js"; // sau numele fișierului unde ai definit oriImages
+import { sunriseSunset } from "./dayNight.js";
 
 //defining the function to render the navigation indication
 function renderIndication() {
@@ -508,64 +509,7 @@ function filterImages(event) {
         });
     }
 }
-function sunriseSunset() {
-    const hour = new Date().getHours(); //getting the current hour
-    const isDay = hour >= 7 && hour < 19; //setting day to true if the hour is between 7 and 19
-    const all = document.querySelectorAll("*");
-    const bodyElement = document.querySelector("body");
-    const navElement = document.querySelector("nav");
-    const liElements = document.querySelectorAll("ul > li");
-    const indiChildrenElements = document.querySelectorAll(".indiChild");
-    const imagesElements = document.querySelectorAll(".image");
 
-    if (isDay) {
-        all.forEach((el) => (el.style.color = "black"));
-
-        bodyElement.classList.remove("bodyNight");
-        bodyElement.classList.add("bodyDay");
-
-        navElement.classList.remove("navNight");
-        navElement.classList.add("navDay");
-
-        liElements.forEach((element) => {
-            element.classList.remove("liNight");
-            element.classList.add("liDay");
-        });
-
-        indiChildrenElements.forEach((element) => {
-            element.classList.remove("indiChildNight");
-            element.classList.add("indiChildDay");
-        });
-
-        imagesElements.forEach((element) => {
-            element.classList.remove("imageNight");
-            element.classList.add("imageDay");
-        });
-    } else {
-        all.forEach((el) => (el.style.color = "white"));
-
-        bodyElement.classList.remove("bodyDay");
-        bodyElement.classList.add("bodyNight");
-
-        navElement.classList.remove("navDay");
-        navElement.classList.add("navNight");
-
-        liElements.forEach((element) => {
-            element.classList.remove("liDay");
-            element.classList.add("liNight");
-        });
-
-        indiChildrenElements.forEach((element) => {
-            element.classList.remove("imageDay");
-            element.classList.add("indiChildNight");
-        });
-
-        imagesElements.forEach((element) => {
-            element.classList.remove("lightImage");
-            element.classList.add("imageNight");
-        });
-    }
-}
 //defining function to display the navigation categories
 function displayNavCategories(oriImages) {
     //takes original images as parameter
@@ -599,7 +543,7 @@ function displayNavCategories(oriImages) {
     for (let i = 0; i < li.length; i++) {
         li[i].addEventListener("click", filterImages);
     }
-    // try block to display the indications / images / footer / day-night mode
+    // try block to display the indications / images / footer
     try {
         renderIndication(); //calling the function to display navigation indication
     } catch (error) {
@@ -608,7 +552,7 @@ function displayNavCategories(oriImages) {
             element.innerHTML = `<h1 style="padding:10px;">Indication add error: ${error}</h1>`; //displaying the error
         });
     } finally {
-        // finally block to display the images / footer / day-night mode
+        // finally block to display the images / footer
         try {
             const [categories, urls] = objToArr(oriImages); //converting the original images to array
             displayImages(categories, urls); //displaying the images with function
@@ -617,22 +561,14 @@ function displayNavCategories(oriImages) {
             const container = document.querySelector(".container"); //selecting the container div
             container.innerHTML = `<h1 style="padding:10px;">Images add error: ${error}</h1>`; //displaying the error
         } finally {
-            // finally block footer / day-night mode
+            // finally block footer
+            const footer = document.querySelector("footer"); //selecting the footer element
             try {
-                const footer = document.querySelector("footer"); //selecting the footer element
                 let presentation =
-                    "<hr><h1>All rights reserved &copy; 2022</h1>";
+                    "<h1 class='footer'>All rights reserved &copy; 2022</h1>";
                 footer.innerHTML = presentation;
             } catch (error) {
-                const footer = document.querySelector("footer"); //selecting the footer element
                 footer.innerHTML = `<h1 style="padding:10px;">Footer add error: ${error}</h1>`; //displaying the error
-            } finally {
-                // finally block day-night mode
-                try {
-                    sunriseSunset(); //calling the function to chang day/night mode
-                } catch (error) {
-                    footer.innerHTML = `<h1 style="padding:10px;">Footer add error: ${error}</h1>`; //displaying the error
-                }
             }
         }
     }
