@@ -1,5 +1,5 @@
 main {
-    padding: 20px;
+    padding: 0 20px;
     margin: auto;
     border: 5px solid;
     border-top: none;
@@ -14,72 +14,75 @@ main {
 }
 /*style buttons and indications*/
 .indication {
-    margin: 10px;
+    margin: 10px 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    border: 3px solid;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 7px;
+}
+.indicationDay {
+    border-color: var(--second-light-color);
+}
+.indicationNight {
+    border-color: var(--second-dark-color);
 }
 /*style for children of indication container*/
 .indiChild {
+    width: 20%;
     margin: 2px;
     padding: 2px;
-    border: none;
-    border-radius: 2px;
-    min-width: 55px;
+    border: 3px solid;
+    border-radius: 7px;
+    border-left: none;
+    border-right: none;
 }
 /*style for day mode*/
 .indiChildDay {
-    background-color: var(--second-light-color);
-    border: 3px solid var(--second-light-color)
+    background-color: #fff;
+    border-color: #fff;
 }
 .indiChildDay:hover {
-    border: 3px solid var(--third-light-color)
+    border-color: var(--third-light-color);
 }
 /*style for night mode*/
 .indiChildNight {
-    background-color: var(--second-dark-color);
-    border: 3px solid var(--second-dark-color)
+    background-color: #000;
+    border-color: #000;
 }
 .indiChildNight:hover {
-    border: 3px solid var(--third-dark-color)
+    border-color: var(--third-dark-color);
 }
 /*style for images container*/
 .container {
     margin: auto;
     display: grid;
-
-    /*display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;*/ /* orizontal  alignement*/
     gap: 5px;
 }
 /*style for single image div*/
 .image {
-    /*aspect-ratio: 1 / 1;*/
     border-radius: 10px;
     display: flex;
-    /*padding-left: 4px;
-    padding-top: 4px;
-    padding-right: 4px;*/
+    padding: 5px;
+    border: 3px solid;
+    border-top: none;
+    border-bottom: none;
 }
 /*style for single for day mode*/
 .imageDay {
-    background-color: var(--first-light-color);
-    /*padding: 5px;*/
+    border-color: #fff;
 }
 .imageDay:hover {
-    background-color: var(--second-light-color);
-    box-shadow: -3px -3px 10px var(--third-light-color);
+    border-color: var(--third-light-color);
 }
 /*style for single for night mode*/
 .imageNight {
-    background-color: var(--first-dark-color);
-    /*padding: 5px;*/
+    border-color: #000;
 }
 .imageNight:hover {
-    background-color: var(--second-dark-color);
-    box-shadow: -3px -3px 10px var(--third-dark-color);
+    border-color: var(--third-dark-color);
 }
 /*style single images*/
 img {
@@ -90,7 +93,10 @@ img {
 }
 
 /*style for categories under images*/
-.image > p {
+p {
     cursor: default;
     margin: 5px;
+    /*border: 3px solid #00000000;
+    border-top: none;
+    border-radius: 2px 2px 10px 10px;*/
 }

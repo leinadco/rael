@@ -3,6 +3,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    border-radius: 0 0 15px 15px; /*hide details on top of the element on scroll*/
+}
+.headerDay {
+    background-color: #fff;
+}
+.headerNight {
+    background-color: #000;
 }
 
 /*style for nav, categories' container*/
@@ -13,11 +20,13 @@ nav {
 }
 /*style for nav day mode*/
 .navDay {
+    box-shadow: 0px 5px 10px #fff;
     background-color: #fff;
     border-color: var(--first-light-color);
 }
 /*style for nav night mode*/
 .navNight {
+    box-shadow: 0px 5px 10px #000;
     background-color: #000;
     border-color: var(--first-dark-color);
 }
@@ -33,14 +42,16 @@ ul {
     border-bottom: none;
 }
 .ulDay {
-    border-color: var(--first-light-color);
+    border-color: var(--second-light-color);
 }
 .ulNight {
-    border-color: var(--first-dark-color);
+    border-color: var(--second-dark-color);
 }
 /*style for categories in nav*/
 li {
     border: 3px solid;
+    border-left: none;
+    border-right: none;
     list-style-type: none;
     border-radius: 5px;
     cursor: pointer;
@@ -50,12 +61,12 @@ li {
     border-color: #fff;
 }
 .liDay:hover {
-    border-color: var(--first-light-color);
+    border-color: var(--third-light-color);
 }
 /*setting style for categories night mode*/
 .liNight {
     border-color: #000;
 }
 .liNight:hover {
-    border-color: var(--first-dark-color);
+    border-color: var(--third-dark-color);
 }

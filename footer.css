@@ -10,7 +10,7 @@ footer {
 .footerNight {
     border-color: var(--first-dark-color);
 }
-footer h1 {
+h1 {
     margin: 5px;
     padding: 5px;
     border-radius: 7px;
@@ -18,8 +18,8 @@ footer h1 {
     border-top: none;
 }
 .h1Day {
-    border-color: var(--first-light-color);
+    border-color: var(--second-light-color);
 }
 .h1Night {
-    border-color: var(--first-dark-color);
+    border-color: var(--second-dark-color);
 }
