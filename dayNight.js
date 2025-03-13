@@ -109,4 +109,3 @@ export function sunriseSunset() {
         h1Element.classList.add("h1Night");
     }
 }
-export default sunriseSunset;
