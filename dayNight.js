@@ -18,7 +18,7 @@ export function sunriseSunset() {
     const imagesElements = document.querySelectorAll(".image");
 
     const footerElement = document.querySelector("footer");
-    const h1Element = document.querySelector("h1");
+    const divElement = document.querySelector("footer div");
     
 
     if (isDay) {
@@ -62,8 +62,8 @@ export function sunriseSunset() {
         footerElement.classList.remove("footerNight");
         footerElement.classList.add("footerDay");
 
-        h1Element.classList.remove("h1Night");
-        h1Element.classList.add("h1Day");
+        divElement.classList.remove("divNight");
+        divElement.classList.add("divDay");
     } else {
         all.forEach(element => (element.style.color = "white"));
 
@@ -105,7 +105,7 @@ export function sunriseSunset() {
         footerElement.classList.remove("footerDay");
         footerElement.classList.add("footerNight");
 
-        h1Element.classList.remove("h1Day");
-        h1Element.classList.add("h1Night");
+        divElement.classList.remove("divDay");
+        divElement.classList.add("divNight");
     }
 }

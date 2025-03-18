@@ -1,3 +1,4 @@
+import { createIFrame } from "./main_3_OpenImage.js";
 /*
 --Use DOM (document.createElement)
 -Faster fo dynamic content
@@ -15,7 +16,7 @@
 //defining the function to create the image tag
 function createImg(url, category) {
     const img = document.createElement("img"); //creating the image tag
-
+    img.addEventListener("click", createIFrame);
     img.src = url; //setting the source of the image
     img.alt = category; //setting the alt of the image
     img.loading = "lazy"; //setting the loading of the image, to load faster

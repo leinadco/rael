@@ -44,8 +44,10 @@ function start(oriImages) {
 
     //footer
     const footer = document.querySelector("footer"); //selecting the footer element
+    let div = document.createElement("div");
     try {
-        renderFooter(footer);
+        div = renderFooter(div);
+        footer.appendChild(div);
         sunriseSunset(); //for first load
     } catch (error) {
         footer.innerHTML = `<h1 style="padding:10px;">Footer add error: ${error}</h1>`; //displaying the error
