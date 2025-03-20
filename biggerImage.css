@@ -1,24 +1,41 @@
 .biggerImage {
     position: sticky;
     top: 120px;
-    max-height: 70vh;
+    max-height: 70vb;
 
     display: grid;
     grid-template: 1fr / 7fr 3fr;
     
-    
-    border: 5px solid green;
-    border-radius: 15px;
+    border: 3px solid;
+    border-radius: 12px;
+}
+.biggerImageDay {
+    background-color: #fff;
+    border-color: var(--second-light-color);
+}
+.biggerImageNight {
+    background-color: #000;
+    border-color: var(--second-dark-color);
+}
+.biggerImage button {
+    /*height: 100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    padding: 10px;
     background-color: green;
-    
-}
-.biggerImage:hover {
-    /*background-color: white;*/
-}
-.biggerImage > div {
-    height: 100%;
+    border: 10px;
+    margin: 10px;
+
 }
 
-.biggerImage > img {
-    object-fit: cover;
+.biggerImage img {
+    max-height: 67vb;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.biggerImage ul {
+    list-style-type: none;
 }

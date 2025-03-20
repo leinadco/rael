@@ -31,7 +31,7 @@ nav {
     border-color: var(--first-dark-color);
 }
 /*style for nav ul to set to flex*/
-ul {
+nav ul {
     display: flex;
     justify-content: space-evenly;
     margin: 5px;
@@ -48,7 +48,7 @@ ul {
     border-color: var(--second-dark-color);
 }
 /*style for categories in nav*/
-li {
+nav li {
     border: 3px solid;
     border-left: none;
     border-right: none;

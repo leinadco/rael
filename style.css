@@ -44,9 +44,9 @@ hr {
 
 /*styles fr diffrent screen dimensions, for responsive design*/
 @media (min-width: 1201px) {
-    * {
+    /** {
         font-size: 1.6vw;
-    }/*
+    }*//*
     .indiChild {
         min-width: 150px;
     }*/
@@ -61,9 +61,9 @@ hr {
     }
 }
 @media (max-width: 1200px) {
-    * {
+    /** {
         font-size: 1.8vw;
-    }/*
+    }*//*
     .indiChild {
         min-width: 80px;
     }*/
@@ -78,9 +78,9 @@ hr {
     }
 }
 @media (max-width: 517px) {
-    * {
+    /** {
         font-size: 2.1vw;
-    }/*
+    }*//*
     .indiChild {
         min-width: 50px;
     }*/

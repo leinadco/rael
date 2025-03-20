@@ -277,9 +277,47 @@ export const oriImages = {
       url: "Images/20240410_222513.jpg",
   },
   70: {
-      category: ["italy", "sea"],
+      category: ["coast", "italy", "sea"],
       url: "Images/20240414_115349.jpg",
   },
+  71: {
+      category: ["coast", "italy", "sea"],
+      url: "Images/20240414_115513.jpg",
+  },
+  72: {
+      category: ["nature"],
+      url: "Images/20240502_130803.jpg",
+  },
+  73: {
+      category: ["flower", "nature"],
+      url: "Images/20240502_155857.jpg",
+  },
+  74: {
+      category: ["monument", "sky"],
+      url: "Images/20240503_192723.jpg",
+  },
+  75: {
+      category: ["nature"],
+      url: "Images/20240504_173356.jpg",
+  },
+  76: {
+      category: ["flower", "nature"],
+      url: "Images/20240513_153921.jpg",
+  },
+  77: {
+      category: ["flower", "nature"],
+      url: "Images/20240513_153929.jpg",
+  },
+  78: {
+      category: ["city", "sky", "sunset"],
+      url: "Images/20240526_202103.jpg",
+  },
+  79: {
+      category: ["city", "monument", "sunset"],
+      url: "Images/20240526_211935.jpg",
+  },
+  80: {
+      category: ["city", "monument", "sunset"],
+      url: "Images/20240526_212315.jpg",
+  },
 };
-
-export default oriImages;

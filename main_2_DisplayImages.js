@@ -18,22 +18,27 @@ function createImg(url, category) {
     const img = document.createElement("img"); //creating the image tag
     img.addEventListener("click", createIFrame);
     img.src = url; //setting the source of the image
-    img.alt = category; //setting the alt of the image
+    if (category.length >= 2) {
+        img.alt = category.map((c) => c.toUpperCase()).join(", "); //if the category has more than one element, the categories are joined by a comma
+    } else {
+        img.alt = category[0].toUpperCase(); //if the category has only one element, the category is displayed
+    }
+    //img.alt = category; //setting the alt of the image
     img.loading = "lazy"; //setting the loading of the image, to load faster
 
     return img; //returning the image
 }
 //defining the function to create the paragraph tag
 function createPar(categories) {
-    const p = document.createElement("p"); //creating the paragraph tag
+    const p = document.createElement("ul"); //creating the paragraph tag
     p.classList.add("category"); //adding the class "category" to the paragraph
 
+    let categoriesList = "";
     //checking if the category has more than one element
-    if (categories.length >= 2) {
-        p.textContent = categories.map((c) => c.toUpperCase()).join(", "); //if the category has more than one element, the categories are joined by a comma
-    } else {
-        p.textContent = categories[0].toUpperCase(); //if the category has only one element, the category is displayed
-    }
+    categories.forEach((element) => {
+        categoriesList += `<li>${element.toUpperCase()}</li>`;
+    });
+    p.innerHTML = categoriesList;
 
     return p; //returning the paragraph
 }

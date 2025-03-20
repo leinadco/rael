@@ -8,11 +8,13 @@ export function sunriseSunset() {
 
     const headerElement = document.querySelector("header");
     const navElement = document.querySelector("nav");
-    const ulElement = document.querySelector("ul");
-    const liElements = document.querySelectorAll("ul > li");
+    const ulElement = document.querySelector("nav ul");
+    const liElements = document.querySelectorAll("nav li");
 
     const indicationElement = document.querySelectorAll(".indication");
     const indiChildrenElements = document.querySelectorAll(".indiChild");
+
+    const biggerElement = document.querySelector("#biggerImage");
 
     const mainElement = document.querySelector("main");
     const imagesElements = document.querySelectorAll(".image");
@@ -50,6 +52,9 @@ export function sunriseSunset() {
             element.classList.remove("indiChildNight");
             element.classList.add("indiChildDay");
         });
+
+        biggerElement.classList.remove("biggerImageNight");
+        biggerElement.classList.add("biggerImageDay");
 
         mainElement.classList.remove("mainNight");
         mainElement.classList.add("mainDay");
@@ -93,6 +98,9 @@ export function sunriseSunset() {
             element.classList.remove("imageDay");
             element.classList.add("indiChildNight");
         });
+
+        biggerElement.classList.remove("biggerImageDay");
+        biggerElement.classList.add("biggerImageNight");
 
         mainElement.classList.remove("mainDay");
         mainElement.classList.add("mainNight");
