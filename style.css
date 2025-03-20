@@ -62,7 +62,7 @@ hr {
 }
 @media (max-width: 1200px) {
     /** {
-        font-size: 1.8vw;
+        font-size: smaller;
     }*//*
     .indiChild {
         min-width: 80px;
@@ -79,7 +79,7 @@ hr {
 }
 @media (max-width: 517px) {
     * {
-        font-size:smaller;
+        font-size: smaller;
     }/*
     .indiChild {
         min-width: 50px;
@@ -89,7 +89,7 @@ hr {
         padding: 10px;
     }
     .container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 2fr);
     }
     li {
         padding: 5px;
