@@ -130,7 +130,7 @@ export function filterImages(event) {
 }
 
 export function renderCategories(oriImages, header) {
-    let nav = "<nav><ul>"; //creating an empty string to store the categories
+    let nav = "<ul>"; //creating an empty string to store the categories
     //creating an empty array to store the categories
     const categories = []; //iterating through the original images
     Object.values(oriImages).forEach((value) => {
@@ -148,6 +148,6 @@ export function renderCategories(oriImages, header) {
     for (let i = 0; i < categories.length; i++) {
         nav += `<li>${categories[i].toUpperCase()}</li>`; //adding the categories to the unordered list
     }
-    nav += "</ul></nav>"; //closing the unordered list
+    nav += "</ul>"; //closing the unordered list
     header.innerHTML = nav; //adding the unordered list to the navigation
 }

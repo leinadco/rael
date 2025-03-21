@@ -7,9 +7,6 @@ export function sunriseSunset() {
     const bodyElement = document.querySelector("body");
 
     const headerElement = document.querySelector("header");
-    const navElement = document.querySelector("nav");
-    const ulElement = document.querySelector("nav ul");
-    const liElements = document.querySelectorAll("nav li");
 
     const indicationElement = document.querySelectorAll(".indication");
     const indiChildrenElements = document.querySelectorAll(".indiChild");
@@ -31,17 +28,6 @@ export function sunriseSunset() {
 
         headerElement.classList.remove("headerNight");
         headerElement.classList.add("headerDay");
-
-        navElement.classList.remove("navNight");
-        navElement.classList.add("navDay");
-
-        ulElement.classList.remove("ulNight");
-        ulElement.classList.add("ulDay");
-
-        liElements.forEach(element => {
-            element.classList.remove("liNight");
-            element.classList.add("liDay");
-        });
 
         indicationElement.forEach(element => {
             element.classList.remove("indicationNight");
@@ -77,17 +63,6 @@ export function sunriseSunset() {
 
         headerElement.classList.remove("headerDay");
         headerElement.classList.add("headerNight");
-
-        navElement.classList.remove("navDay");
-        navElement.classList.add("navNight");
-
-        ulElement.classList.remove("ulDay");
-        ulElement.classList.add("ulNight");
-
-        liElements.forEach(element => {
-            element.classList.remove("liDay");
-            element.classList.add("liNight");
-        });
 
         indicationElement.forEach(element => {
             element.classList.remove("indicationDay");

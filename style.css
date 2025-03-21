@@ -13,8 +13,13 @@
 }
 /*body style for mode*/
 body {
+    margin: auto;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
+}
+body > div {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 /*body style for day mode*/
 .bodyDay {
@@ -50,15 +55,13 @@ hr {
     .indiChild {
         min-width: 150px;
     }*/
-    main {
+    body {
         width: 75%;
     }
     .container {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, auto);
     }
-    li {
-        padding: 9px;
-    }
+    
 }
 @media (max-width: 1200px) {
     /** {
@@ -71,11 +74,9 @@ hr {
         width: 85%;
     }
     .container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, auto);
     }
-    li {
-        padding: 7px;
-    }
+    
 }
 @media (max-width: 517px) {
     * {
@@ -89,9 +90,7 @@ hr {
         padding: 10px;
     }
     .container {
-        grid-template-columns: repeat(3, 2fr);
+        grid-template-columns: repeat(3, auto);
     }
-    li {
-        padding: 5px;
-    }
+    
 }

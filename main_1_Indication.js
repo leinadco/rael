@@ -1,4 +1,4 @@
-import { activImg } from "./header.js";
+import { activImg } from "./indication.js";
 //defining the function to render the navigation indication
 export function renderIndication() {
     const indicationCont = document.querySelectorAll(".indication"); //selecting the indication divs

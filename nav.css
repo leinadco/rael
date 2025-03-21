@@ -1,50 +1,47 @@
 /*setting header to alway stay at top on scroll*/
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-radius: 0 0 15px 15px; /*hide details on top of the element on scroll*/
-}
+/*header {
+    border-radius: 15px;*/ /*hide details on top of the element on scroll*/
+/*}
 .headerDay {
     background-color: #fff;
 }
 .headerNight {
     background-color: #000;
-}
+}*/
 
 /*style for nav, categories' container*/
-nav {
+
+
+div > nav {
     border-radius: 15px;
     border: 5px solid;
-    border-bottom: none;
+    border-right: none;
 }
 /*style for nav day mode*/
-.navDay {
-    box-shadow: 0px 5px 10px #fff;
-    background-color: #fff;
+.bodyDay > div > nav {
+    /*box-shadow: 0px 5px 10px #fff;
+    background-color: #fff;*/
     border-color: var(--first-light-color);
 }
 /*style for nav night mode*/
-.navNight {
-    box-shadow: 0px 5px 10px #000;
-    background-color: #000;
+.bodyNight > div > nav {
+    /*box-shadow: 0px 5px 10px #000;
+    background-color: #000;*/
     border-color: var(--first-dark-color);
 }
 /*style for nav ul to set to flex*/
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
+nav > ul {
     margin: 5px;
     padding: 5px;
-    flex-wrap: wrap;
     border-radius: 7px;
     border: 3px solid;
-    border-bottom: none;
+    border-left: none;
+    list-style-type: none;
 }
-.ulDay {
+.bodyDay > div > nav > ul {
     border-color: var(--second-light-color);
 }
-.ulNight {
+.bodyNight > div > nav > ul {
     border-color: var(--second-dark-color);
 }
 /*style for categories in nav*/
@@ -52,21 +49,20 @@ nav li {
     border: 3px solid;
     border-left: none;
     border-right: none;
-    list-style-type: none;
     border-radius: 5px;
     cursor: pointer;
 }
 /*setting style for categories day mode*/
-.liDay {
+.bodyDay > div > nav > ul > li {
     border-color: #fff;
 }
-.liDay:hover {
+.bodyDay > div > nav > ul > li:hover {
     border-color: var(--third-light-color);
 }
 /*setting style for categories night mode*/
-.liNight {
+.bodyNight > div > nav > ul > li {
     border-color: #000;
 }
-.liNight:hover {
+.bodyNight > div > nav > ul > li:hover {
     border-color: var(--third-dark-color);
 }

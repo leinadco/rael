@@ -1,13 +1,14 @@
 .biggerImage {
-    position: sticky;
-    top: 120px;
-    max-height: 70vb;
+    position: relative;
+    height: 60vb;
 
     display: grid;
     grid-template: 1fr / 7fr 3fr;
+    align-items: center;
     
     border: 3px solid;
     border-radius: 12px;
+
 }
 .biggerImageDay {
     background-color: #fff;
@@ -27,11 +28,10 @@
     background-color: green;
     border: 10px;
     margin: 10px;
-
 }
 
 .biggerImage img {
-    max-height: 67vb;
+    max-height: 57vb;
     max-width: 100%;
     border-radius: 10px;
 }

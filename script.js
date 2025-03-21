@@ -1,7 +1,7 @@
 console.clear();
 import { oriImages } from "./images.js";
 import { sunriseSunset } from "./dayNight.js";
-import { filterImages, activImg, objToArr, renderCategories } from "./header.js";
+import { filterImages, activImg, objToArr, renderCategories } from "./indication.js";
 import { renderIndication } from "./main_1_Indication.js";
 import { displayImages } from "./main_2_DisplayImages.js";
 import { renderFooter } from "./footer.js";
@@ -12,7 +12,7 @@ function start(oriImages) {
     //using try-catch to catch errors
 
     //header
-    const header = document.querySelector("header"); //selecting the navigation element
+    const header = document.querySelector("nav"); //selecting the navigation element
     try {
         renderCategories(oriImages, header);
     } catch (error) {
