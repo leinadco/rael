@@ -1,41 +1,28 @@
-/*setting header to alway stay at top on scroll*/
-/*header {
-    border-radius: 15px;*/ /*hide details on top of the element on scroll*/
-/*}
-.headerDay {
-    background-color: #fff;
-}
-.headerNight {
-    background-color: #000;
-}*/
-
 /*style for nav, categories' container*/
 
-
-div > nav {
+body > div {
     border-radius: 15px;
     border: 5px solid;
-    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    margin: 5px;
 }
-/*style for nav day mode*/
-.bodyDay > div > nav {
-    /*box-shadow: 0px 5px 10px #fff;
-    background-color: #fff;*/
+.bodyDay > div {
     border-color: var(--first-light-color);
 }
 /*style for nav night mode*/
-.bodyNight > div > nav {
-    /*box-shadow: 0px 5px 10px #000;
-    background-color: #000;*/
+.bodyNight > div {
     border-color: var(--first-dark-color);
+}
+nav {
+    margin: 0 5px;
 }
 /*style for nav ul to set to flex*/
 nav > ul {
     margin: 5px;
     padding: 5px;
-    border-radius: 7px;
-    border: 3px solid;
-    border-left: none;
+    border-radius: 10px;
+    border-right: 3px solid;
     list-style-type: none;
 }
 .bodyDay > div > nav > ul {
@@ -46,23 +33,21 @@ nav > ul {
 }
 /*style for categories in nav*/
 nav li {
+    text-align: right;
     border: 3px solid;
     border-left: none;
     border-right: none;
     border-radius: 5px;
     cursor: pointer;
+    border-color: #ffffff00;
+    margin: 2px 4px; 
+    padding: 1px 2px;
 }
 /*setting style for categories day mode*/
-.bodyDay > div > nav > ul > li {
-    border-color: #fff;
-}
 .bodyDay > div > nav > ul > li:hover {
     border-color: var(--third-light-color);
 }
 /*setting style for categories night mode*/
-.bodyNight > div > nav > ul > li {
-    border-color: #000;
-}
 .bodyNight > div > nav > ul > li:hover {
     border-color: var(--third-dark-color);
 }

@@ -6,14 +6,11 @@ export function sunriseSunset() {
 
     const bodyElement = document.querySelector("body");
 
-    const headerElement = document.querySelector("header");
-
     const indicationElement = document.querySelectorAll(".indication");
     const indiChildrenElements = document.querySelectorAll(".indiChild");
 
     const biggerElement = document.querySelector("#biggerImage");
 
-    const mainElement = document.querySelector("main");
     const imagesElements = document.querySelectorAll(".image");
 
     const footerElement = document.querySelector("footer");
@@ -25,9 +22,6 @@ export function sunriseSunset() {
 
         bodyElement.classList.remove("bodyNight");
         bodyElement.classList.add("bodyDay");
-
-        headerElement.classList.remove("headerNight");
-        headerElement.classList.add("headerDay");
 
         indicationElement.forEach(element => {
             element.classList.remove("indicationNight");
@@ -41,9 +35,6 @@ export function sunriseSunset() {
 
         biggerElement.classList.remove("biggerImageNight");
         biggerElement.classList.add("biggerImageDay");
-
-        mainElement.classList.remove("mainNight");
-        mainElement.classList.add("mainDay");
 
         imagesElements.forEach(element => {
             element.classList.remove("imageNight");
@@ -61,9 +52,6 @@ export function sunriseSunset() {
         bodyElement.classList.remove("bodyDay");
         bodyElement.classList.add("bodyNight");
 
-        headerElement.classList.remove("headerDay");
-        headerElement.classList.add("headerNight");
-
         indicationElement.forEach(element => {
             element.classList.remove("indicationDay");
             element.classList.add("indicationNight");
@@ -76,9 +64,6 @@ export function sunriseSunset() {
 
         biggerElement.classList.remove("biggerImageDay");
         biggerElement.classList.add("biggerImageNight");
-
-        mainElement.classList.remove("mainDay");
-        mainElement.classList.add("mainNight");
 
         imagesElements.forEach(element => {
             element.classList.remove("lightImage");

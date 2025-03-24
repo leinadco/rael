@@ -1,16 +1,13 @@
 main {
-    padding: 0 20px;
-    margin: auto;
-    border: 5px solid;
-    border-top: none;
-    border-bottom: none;
-    border-radius: 15px;
+    border-left: 3px solid;
+    border-radius: 10px;
+    margin: 5px;
 }
-.mainDay {
-    border-color: var(--first-light-color);
+.bodyDay > div > main {
+    border-color: var(--second-light-color);
 }
-.mainNight {
-    border-color: var(--first-dark-color);
+.bodyNight > div > main {
+    border-color: var(--second-dark-color);
 }
 /*style buttons and indications*/
 .indication {
@@ -57,9 +54,11 @@ main {
 }
 /*style for images container*/
 .container {
-    margin: auto;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 5px;
+    justify-content: space-around;
+    margin: 5px;
 }
 /*style for single image div*/
 .image {
