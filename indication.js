@@ -133,16 +133,30 @@ export function renderCategories(oriImages, header) {
     let nav = "<ul>"; //creating an empty string to store the categories
     //creating an empty array to store the categories
     const categories = []; //iterating through the original images
+    const categoriesO = {};
+    let count = 0;
     Object.values(oriImages).forEach((value) => {
+        count++;
         const oriCategories = value.category; //getting the categories from the original images
         // iterating through the categories
         for (let i = 0; i < oriCategories.length; i++) {
             //for loop for multiple categorie per image
+            if (!(oriCategories[i] in Object.keys(categoriesO))) {
+                console.log(true);
+                categoriesO[oriCategories[i]] = 1;
+                console.log(categoriesO[oriCategories[i]]);
+            } else if (oriCategories[i] in Object.keys(categoriesO)){
+                console.log(false);
+                categoriesO[oriCategories[i]] = Number(categoriesO[oriCategories[i]]) + 1;
+                console.log(categoriesO[oriCategories[i]]);
+            }
             if (!categories.includes(oriCategories[i])) {
                 categories.push(oriCategories[i]);
             }
         }
     });
+    console.log(count);
+    console.log(Object.values(categoriesO));
     categories.sort(); //sorting categories
     categories.unshift("all"); //adding "all" to the categories
     for (let i = 0; i < categories.length; i++) {
