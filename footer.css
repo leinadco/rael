@@ -1,25 +1,25 @@
 footer {
-    margin: auto;
     border: 5px solid;
     border-top: none;
     border-radius: 15px;
+    margin: 5px;
 }
-.footerDay {
+.bodyDay > footer {
     border-color: var(--first-light-color);
 }
-.footerNight {
+.bodyNight > footer {
     border-color: var(--first-dark-color);
 }
-footer div {
+/*footer div {
     margin: 5px;
     padding: 5px;
     border-radius: 7px;
     border: 3px solid;
     border-top: none;
 }
-.divDay {
+.bodyDay > footer > div {
     border-color: var(--second-light-color);
 }
-.divNight {
+.bodyNight > footer > div {
     border-color: var(--second-dark-color);
-}
+}*/

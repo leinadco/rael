@@ -24,11 +24,11 @@ body > div {
 }
 /*body style for day mode*/
 .bodyDay {
-    background-color: white;
+    background-color: #fff;
 }
 /*body style for night mode*/
 .bodyNight {
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
 }
 
 /*the separator line*/
@@ -40,10 +40,6 @@ hr {
 
 /*styles fr diffrent screen dimensions, for responsive design*/
 @media (min-width: 1201px) {
-    /*
-    .indiChild {
-        min-width: 150px;
-    }*/
     body {
         width: 75%;
     }
@@ -51,14 +47,10 @@ hr {
         /*grid-template-columns: repeat(5, auto);*/
     }
     .image {
-        max-width: 19%;
+        width: 19%;
     }
 }
 @media (max-width: 1200px) {
-    /*
-    .indiChild {
-        min-width: 80px;
-    }*/
     body {
         width: 85%;
     }
@@ -66,14 +58,13 @@ hr {
         /*grid-template-columns: repeat(4, auto);*/
     }
     .image {
-        max-width: 24%;
+        width: 24%;
     }
 }
 @media (max-width: 517px) {
-    /*
-    .indiChild {
-        min-width: 50px;
-    }*/
+    * {
+        font-size: smaller;
+    }
     body {
         width: 100%;
     }
@@ -81,7 +72,12 @@ hr {
         /*grid-template-columns: repeat(3, auto);*/
     }
     .image {
-        max-width: 32%;
+        width: 33%;
+    }/*
+    body > div {
+        grid-template-columns: 10fr;
     }
-    
+    nav {
+        display: none;
+    }*/
 }

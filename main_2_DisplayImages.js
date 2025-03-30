@@ -1,4 +1,4 @@
-import { createIFrame } from "./main_3_OpenImage.js";
+import { createIFrame } from "./openImage.js";
 /*
 --Use DOM (document.createElement)
 -Faster fo dynamic content
