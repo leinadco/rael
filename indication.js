@@ -113,8 +113,17 @@ export function activImg(event = "undefined") {
 }
 //defining the function to filter the images
 export function filterImages(event) {
+    console.log(document.querySelector(".active")); //removing the active class from the header
+    event.target.parentElement.classList.add("active"); //removing the active class from the header
     //takes event paramenter
-    const category = event.target.textContent.toLowerCase(); //getting the category clicked
+    let category = event.target.textContent.toLowerCase(); //getting the category clicked
+    if (Number(category) > 0) {
+        event.target.classList.add("active");
+        category = event.target.nextElementSibling.textContent.toLowerCase();
+    } else if (typeof event.target === "object"){
+        console.log(true);
+        //console.log(Object.value(event.target));
+    }
     const [categories, urls] = objToArr(oriImages, category); //converting the original immaeges to filtered arrays
     displayImages(categories, urls); //displaying the filtered images
     activImg("undefined"); //activating the filtered images
@@ -134,33 +143,30 @@ export function renderCategories(oriImages, header) {
     //creating an empty array to store the categories
     const categories = []; //iterating through the original images
     const categoriesO = {};
-    let count = 0;
     Object.values(oriImages).forEach((value) => {
-        count++;
         const oriCategories = value.category; //getting the categories from the original images
         // iterating through the categories
         for (let i = 0; i < oriCategories.length; i++) {
             //for loop for multiple categorie per image
-            if (!(oriCategories[i] in Object.keys(categoriesO))) {
-                console.log(true);
-                categoriesO[oriCategories[i]] = 1;
-                console.log(categoriesO[oriCategories[i]]);
-            } else if (oriCategories[i] in Object.keys(categoriesO)){
-                console.log(false);
-                categoriesO[oriCategories[i]] = Number(categoriesO[oriCategories[i]]) + 1;
-                console.log(categoriesO[oriCategories[i]]);
+            if (!Object.keys(categoriesO).includes(oriCategories[i])) {
+                categoriesO[oriCategories[i]] = ["number:"];
+                categoriesO[oriCategories[i]].push(1);
+            } else {
+                categoriesO[oriCategories[i]][1] = categoriesO[oriCategories[i]][1] + 1;
             }
             if (!categories.includes(oriCategories[i])) {
                 categories.push(oriCategories[i]);
             }
         }
     });
-    console.log(count);
-    console.log(Object.values(categoriesO));
     categories.sort(); //sorting categories
     categories.unshift("all"); //adding "all" to the categories
     for (let i = 0; i < categories.length; i++) {
-        nav += `<li>${categories[i].toUpperCase()}</li>`; //adding the categories to the unordered list
+        if (categories[i] === "all") {
+            nav += `<li><span>${Object.keys(oriImages).length}</span><span>${categories[i].toUpperCase()}</span></li>`; //adding the categories to the unordered list
+        } else {
+            nav += `<li><span>${categoriesO[categories[i]][1]}</span><span>${categories[i].toUpperCase()}</span></li>`; //adding the categories to the unordered list
+        }//adding the categories to the unordered list
     }
     nav += "</ul>"; //closing the unordered list
     header.innerHTML = nav; //adding the unordered list to the navigation

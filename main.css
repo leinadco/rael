@@ -103,5 +103,7 @@ main {
     list-style-type: none;
     margin: 5px;
     padding: 2px;
-    border: 1px dotted;
+}
+.active {
+    border-color: var(--third-dark-color);
 }

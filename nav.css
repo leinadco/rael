@@ -51,3 +51,11 @@ nav li {
 .bodyNight > div > nav > ul > li:hover {
     border-color: var(--third-dark-color);
 }
+
+nav ul li {
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li span {
+    margin-right: 5px;
+}
