@@ -1,7 +1,7 @@
 main {
     border-left: 3px solid;
     border-radius: 10px;
-    margin: 5px 0;
+    margin: 0;
 }
 .bodyDay > div > main {
     border-color: var(--second-light-color);
@@ -25,6 +25,12 @@ main {
 }
 .bodyNight > div .indication {
     border-color: var(--second-dark-color);
+}
+.bodyDay > div .indication option{
+    background-color: #fff;
+}
+.bodyNight > div .indication option{
+    background-color: #000;
 }
 /*style for children of indication container*/
 .indiChild {

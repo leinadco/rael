@@ -19,8 +19,8 @@ nav {
 }
 /*style for nav ul to set to flex*/
 nav > ul {
-    margin: 5px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
     border-radius: 10px;
     border-right: 3px solid;
     list-style-type: none;
@@ -40,7 +40,7 @@ nav li {
     border-radius: 5px;
     cursor: pointer;
     border-color: #ffffff00;
-    margin: 2px 4px; 
+    margin: 0px 4px; 
     padding: 1px 2px;
 }
 /*setting style for categories day mode*/
@@ -52,10 +52,12 @@ nav li {
     border-color: var(--third-dark-color);
 }
 
-nav ul li {
-    display: flex;
-    justify-content: space-between;
+nav > ul li {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: stretch;
 }
 nav ul li span {
-    margin-right: 5px;
+    margin: 2px;
+    min-width: 25px;
 }

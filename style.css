@@ -20,7 +20,7 @@ body {
 }
 body > div {
     display: grid;
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns: auto auto;
 }
 /*body style for day mode*/
 .bodyDay {
@@ -58,7 +58,7 @@ hr {
         /*grid-template-columns: repeat(4, auto);*/
     }
     .image {
-        width: 25%;
+        width: 24.8%;
     }
 }
 @media (max-width: 517px) {
@@ -67,6 +67,9 @@ hr {
     }
     body {
         width: 100%;
+    }
+    header {
+        padding: 5px;
     }
     .container {
         /*grid-template-columns: repeat(3, auto);*/
@@ -81,4 +84,7 @@ hr {
     nav {
         display: none;
     }*/
+    footer {
+        padding: 5px;
+    }
 }

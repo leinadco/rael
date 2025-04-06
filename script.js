@@ -15,6 +15,8 @@ function start(oriImages) {
     const header = document.querySelector("nav"); //selecting the navigation element
     try {
         renderCategories(oriImages, header);
+        const allActive = document.querySelector("nav li"); //selecting the indication div
+        allActive.classList.add("active"); //adding the active class to the first element
     } catch (error) {
         header.innerHTML = `<h1 style="padding:10px;">Navigation add error: ${error}</h1>`; //displaying the error
     }
