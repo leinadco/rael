@@ -320,6 +320,46 @@ export const oriImages = {
       category: ["city", "monument", "sunset"],
       url: "Images/20240526_212315.jpg",
   },
+  81: {
+      category: ["black & white", "monument"],
+      url: "Images/20240526_220000.jpg",
+  },
+  82: {
+      category: ["black & white", "monument"],
+      url: "Images/20240526_220619.jpg",
+  },
+  83: {
+      category: ["city", "monument", "sunset"],
+      url: "Images/20240606_045825.jpg",
+  },
+  84: {
+      category: ["road", "sunrise"],
+      url: "Images/20240622_055249.jpg",
+  },
+  85: {
+      category: ["flower", "nature"],
+      url: "Images/20240622_123559.jpg",
+  },
+  86: {
+      category: ["colorful", "fruits", "nature"],
+      url: "Images/20240622_133452.jpg",
+  },
+  87: {
+      category: ["monument"],
+      url: "Images/20240623_100234.jpg",
+  },
+  88: {
+      category: ["insects", "nature"],
+      url: "Images/20240623_145741.jpg",
+  },
+  89: {
+      category: ["colorful", "flower", "nature"],
+      url: "Images/20240623_155707.jpg",
+  },
+  90: {
+      category: ["colorful", "flower", "nature"],
+      url: "Images/20240623_162855.jpg",
+  },
 };
 
 export function addLike() {

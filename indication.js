@@ -127,7 +127,7 @@ export function filterImages(event) {
         category = event.target.children[1].textContent.toLowerCase();
     }
     const [categories, urls] = objToArr(oriImages, category); //converting the original immaeges to filtered arrays
-    displayImages(categories, urls); //displaying the filtered images
+    displayImages(categories, urls, 0); //displaying the filtered images
     activImg("undefined"); //activating the filtered images
 
     //deactivating the paragraphs if the category is not "all", just for design

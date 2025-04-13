@@ -74,7 +74,7 @@ function createDivImg(url, category, likes) {
 }
 //defining the function to add images to div container
 export function displayImages(categories, urls, likes) {
-    console.log(likes);
+    console.log("LIKES " + likes);
     const containerImg = document.querySelector(".container"); //selecting the container div
     containerImg.innerHTML = ""; //Deleting the inner HTML of the container, avoid double images
 
