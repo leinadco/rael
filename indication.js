@@ -141,7 +141,8 @@ export function filterImages(event) {
 }
 
 export function renderCategories(oriImages, header) {
-    let nav = "<ul>"; //creating an empty string to store the categories
+    let nav = "<div><h1>Categories</h1>";
+    nav += "<ul>"; //creating an empty string to store the categories
     //creating an empty array to store the categories
     const categories = []; //iterating through the original images
     const categoriesO = {};
@@ -170,6 +171,6 @@ export function renderCategories(oriImages, header) {
             nav += `<li><span style="text-align:left;">${categoriesO[categories[i]][1]}</span><span style="text-align:right;">${categories[i].toUpperCase()}</span></li>`; //adding the categories to the unordered list
         }//adding the categories to the unordered list
     }
-    nav += "</ul>"; //closing the unordered list
+    nav += "</ul></div>"; //closing the unordered list
     header.innerHTML = nav; //adding the unordered list to the navigation
 }

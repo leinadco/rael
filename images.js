@@ -321,3 +321,13 @@ export const oriImages = {
       url: "Images/20240526_212315.jpg",
   },
 };
+
+export function addLike() {
+    const likes = event.target.innerHTML;
+    const img = event.target.parentElement.firstChild.src;
+    const index = Object.keys(oriImages).find(key => oriImages[key].url === img.slice(22, img.length));
+    console.log(oriImages[index].likes);
+    oriImages[index].likes = Number(likes) + 1;
+    console.log(oriImages[index].likes);
+    event.target.innerHTML = oriImages[index].likes;
+}

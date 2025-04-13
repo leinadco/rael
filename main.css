@@ -60,7 +60,6 @@ main {
 /*style for images container*/
 .container {
     display: grid;
-    
     justify-items: stretch;
     justify-content: center;
     gap: 5px;
@@ -113,4 +112,8 @@ main {
 }
 .active {
     border-color: var(--third-dark-color);
+}
+
+.likes {
+    cursor: pointer;
 }

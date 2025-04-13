@@ -3,7 +3,7 @@ import { activImg } from "./indication.js";
 export function renderIndication() {
     const indicationCont = document.querySelectorAll(".indication"); //selecting the indication divs
     const options = [5, 10, 20, 40, 80, 160, 320]; //defining the options for the select
-    const slectedOption = 20; //defining the selected option
+    const slectedOption = 10; //defining the selected option
     //defining the indication buttons and select like strings
 
     let indication =

@@ -1,4 +1,5 @@
 import { createIFrame } from "./openImage.js";
+import { addLike } from "./images.js";
 /*
 --Use DOM (document.createElement)
 -Faster fo dynamic content
@@ -30,33 +31,50 @@ function createImg(url, category) {
 }
 //defining the function to create the paragraph tag
 function createPar(categories) {
-    const p = document.createElement("ul"); //creating the paragraph tag
-    p.classList.add("category"); //adding the class "category" to the paragraph
+    const ul = document.createElement("ul"); //creating the paragraph tag
+    ul.classList.add("category"); //adding the class "category" to the paragraph
 
     let categoriesList = "";
     //checking if the category has more than one element
     categories.forEach((element) => {
         categoriesList += `<li>${element.toUpperCase()}</li>`;
     });
-    p.innerHTML = categoriesList;
+    ul.innerHTML = categoriesList;
 
+    return ul; //returning the paragraph
+}
+
+function createLike(likes) {
+    const p = document.createElement("p"); //creating the paragraph tag
+    p.classList.add("likes");
+    if (typeof likes === "undefined") {
+        p.innerHTML = 0;
+    } else {
+        p.innerHTML = likes;
+    }
+    p.addEventListener("click", addLike);
     return p; //returning the paragraph
 }
+
+
 //defining the function to create the div with image and paragraph
-function createDivImg(url, category) {
+function createDivImg(url, category, likes) {
     const div = document.createElement("div"); //creating the div in wich the image and paragraph will be added
     div.classList.add("image"); //adding the class "image" to the div
 
     const img = createImg(url, category); //creating the image calling the function
     const p = createPar(category); //creating the paragraph calling the function
+    const pLikes = createLike(likes);
 
     div.appendChild(img); //adding the image to the div
     div.appendChild(p); //adding the paragraph to the div
+    div.appendChild(pLikes); //adding the like to the div
 
     return div; //returning the div to be added to the container
 }
 //defining the function to add images to div container
-export function displayImages(categories, urls) {
+export function displayImages(categories, urls, likes) {
+    console.log(likes);
     const containerImg = document.querySelector(".container"); //selecting the container div
     containerImg.innerHTML = ""; //Deleting the inner HTML of the container, avoid double images
 
@@ -64,7 +82,7 @@ export function displayImages(categories, urls) {
     if (categories.length === urls.length) {
         //this if is a verification
         for (let i = 0; i < categories.length; i++) {
-            containerImg.appendChild(createDivImg(urls[i], categories[i])); //adding the images to the container
+            containerImg.appendChild(createDivImg(urls[i], categories[i], likes[i])); //adding the images to the container
         }
     }
 }

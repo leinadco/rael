@@ -36,8 +36,8 @@ function start(oriImages) {
         });
     }
     try {
-        const [categories, urls] = objToArr(oriImages); //converting the original images to array
-        displayImages(categories, urls); //displaying the images with function
+        const [categories, urls] = objToArr(oriImages); //converting the original images to arrays
+        displayImages(categories, urls, [1,2,3]); //displaying the images with function
         activImg("undefined"); //activating all the images at first load
     } catch (error) {
         const container = document.querySelector(".container"); //selecting the container div

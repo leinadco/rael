@@ -18,17 +18,17 @@ nav {
     margin: 0 5px;
 }
 /*style for nav ul to set to flex*/
-nav > ul {
+nav ul {
     margin: 0px;
     padding: 0px;
     border-radius: 10px;
     border-right: 3px solid;
     list-style-type: none;
 }
-.bodyDay > div > nav > ul {
+.bodyDay nav ul {
     border-color: var(--second-light-color);
 }
-.bodyNight > div > nav > ul {
+.bodyNight nav ul {
     border-color: var(--second-dark-color);
 }
 /*style for categories in nav*/
@@ -44,15 +44,15 @@ nav li {
     padding: 1px 2px;
 }
 /*setting style for categories day mode*/
-.bodyDay > div > nav > ul > li:hover {
+.bodyDay nav li:hover {
     border-color: var(--third-light-color);
 }
 /*setting style for categories night mode*/
-.bodyNight > div > nav > ul > li:hover {
+.bodyNight nav li:hover {
     border-color: var(--third-dark-color);
 }
 
-nav > ul li {
+nav ul li {
     display: grid;
     grid-template-columns: auto auto;
     justify-items: stretch;
