@@ -325,9 +325,8 @@ export const oriImages = {
 export function addLike() {
     const likes = event.target.innerHTML;
     const img = event.target.parentElement.firstChild.src;
-    const index = Object.keys(oriImages).find(key => oriImages[key].url === img.slice(22, img.length));
-    console.log(oriImages[index].likes);
+    console.log(img.slice(img.indexOf("Images/")),img.length);
+    const index = Object.keys(oriImages).find(key => oriImages[key].url === img.slice(img.indexOf("Images/")),img.length);
     oriImages[index].likes = Number(likes) + 1;
-    console.log(oriImages[index].likes);
     event.target.innerHTML = oriImages[index].likes;
 }
