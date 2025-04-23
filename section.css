@@ -1,0 +1,123 @@
+section {
+    border-left: 3px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bodyDay section {
+    border-color: var(--second-light-color);
+}
+.bodyNight section {
+    border-color: var(--second-dark-color);
+}
+
+/*style buttons and indications*/
+.indication {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 3px solid;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 7px;
+}
+.bodyDay .indication {
+    border-color: var(--third-light-color);
+}
+.bodyNight .indication {
+    border-color: var(--third-dark-color);
+}
+.bodyDay .indication option{
+    background-color: #fff;
+}
+.bodyNight .indication option{
+    background-color: #000;
+}
+/*style for children of indication container*/
+.indiChild {
+    margin: 2px;
+    padding: 2px;
+    border: 3px solid;
+    border-radius: 7px;
+    border-left: none;
+    border-right: none;
+    background-color: #00000000;
+}
+/*style for day mode*/
+.bodyDay .indiChild {
+    border-color: #fff;
+}
+.bodyDay .indiChild:hover {
+    border-color: var(--third-light-color);
+}
+/*style for night mode*/
+.bodyNight .indiChild {
+    border-color: #000;
+}
+.bodyNight .indiChild:hover {
+    border-color: var(--third-dark-color);
+}
+/*style for images container*/
+.container {
+    display: grid;
+    gap: 5px;
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 10px;
+}
+.bodyDay .container {
+    border-color: var(--third-light-color);
+}
+.bodyNight .container {
+    border-color: var(--third-dark-color);
+}
+/*style for single image div*/
+.image {
+    border-radius: 10px;
+    display: flex;
+    border: 3px solid;
+    border-left: none;
+    border-right: none;
+}
+/*style for single for day mode*/
+.bodyDay .image {
+    border-color: #fff;
+}
+.bodyDay .image:hover {
+    border-color: var(--third-light-color);
+}
+/*style for single for night mode*/
+.bodyNight .image {
+    border-color: #000;
+}
+.bodyNight .image:hover {
+    border-color: var(--third-dark-color);
+}
+/*style single images*/
+.image img {
+    width: 100%;
+    object-fit: cover; /*ensure that the image doesn't cause distorsions*/
+    aspect-ratio: 1 / 1; /*ensure the squareness of every image*/
+    border-radius: 10px;
+}
+
+/*style for categories under images*/
+.image ul {
+    cursor: default;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.image li {
+    list-style-type: none;
+    margin: 5px;
+    padding: 2px;
+}

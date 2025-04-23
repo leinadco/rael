@@ -18,10 +18,6 @@ body {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
 }
-body > div {
-    display: grid;
-    grid-template-columns: auto 1fr;
-}
 /*body style for day mode*/
 .bodyDay {
     background-color: #fff;

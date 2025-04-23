@@ -361,12 +361,3 @@ export const oriImages = {
       url: "Images/20240623_162855.jpg",
   },
 };
-
-export function addLike() {
-    const likes = event.target.innerHTML;
-    const img = event.target.parentElement.firstChild.src;
-    console.log(img.slice(img.indexOf("Images/")),img.length);
-    const index = Object.keys(oriImages).find(key => oriImages[key].url === img.slice(img.indexOf("Images/")),img.length);
-    oriImages[index].likes = Number(likes) + 1;
-    event.target.innerHTML = oriImages[index].likes;
-}

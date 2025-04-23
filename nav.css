@@ -1,29 +1,17 @@
-/*style for nav, categories' container*/
+main nav {
+    border-right: 3px solid;
+    border-radius: 10px;
+}
+.bodyDay nav {
+    border-color: var(--second-light-color);
+}
+.bodyNight nav {
+    border-color: var(--second-dark-color);
+}
 
-body > div {
-    border-radius: 15px;
-    border: 5px solid;
-    border-top: none;
-    border-bottom: none;
-    margin: 5px;
-}
-.bodyDay > div {
-    border-color: var(--first-light-color);
-}
-/*style for nav night mode*/
-.bodyNight > div {
-    border-color: var(--first-dark-color);
-}
-nav {
-    margin: 0 5px;
-}
 /*style for nav ul to set to flex*/
 nav ul {
-    margin: 0px;
-    padding: 0px;
-    border-radius: 10px;
-    border-right: 3px solid;
-    list-style-type: none;
+    padding: 0;
 }
 .bodyDay nav ul {
     border-color: var(--second-light-color);
@@ -33,15 +21,18 @@ nav ul {
 }
 /*style for categories in nav*/
 nav li {
-    text-align: right;
     border: 3px solid;
     border-left: none;
     border-right: none;
     border-radius: 5px;
     cursor: pointer;
     border-color: #ffffff00;
-    margin: 0px 4px; 
-    padding: 1px 2px;
+    margin: 0 4px; 
+    padding: 2px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1px;
+    justify-items: stretch;
 }
 /*setting style for categories day mode*/
 .bodyDay nav li:hover {
@@ -52,12 +43,9 @@ nav li {
     border-color: var(--third-dark-color);
 }
 
-nav ul li {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-items: stretch;
-}
 nav ul li span {
-    margin: 2px;
     min-width: 25px;
+}
+.active {
+    border-color: var(--third-dark-color);
 }

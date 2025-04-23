@@ -1,5 +1,4 @@
 import { createIFrame } from "./openImage.js";
-import { addLike } from "./images.js";
 /*
 --Use DOM (document.createElement)
 -Faster fo dynamic content
@@ -44,19 +43,6 @@ function createPar(categories) {
     return ul; //returning the paragraph
 }
 
-function createLike(likes) {
-    const p = document.createElement("p"); //creating the paragraph tag
-    p.classList.add("likes");
-    if (typeof likes === "undefined") {
-        p.innerHTML = 0;
-    } else {
-        p.innerHTML = likes;
-    }
-    p.addEventListener("click", addLike);
-    return p; //returning the paragraph
-}
-
-
 //defining the function to create the div with image and paragraph
 function createDivImg(url, category, likes) {
     const div = document.createElement("div"); //creating the div in wich the image and paragraph will be added
@@ -64,11 +50,9 @@ function createDivImg(url, category, likes) {
 
     const img = createImg(url, category); //creating the image calling the function
     const p = createPar(category); //creating the paragraph calling the function
-    const pLikes = createLike(likes);
 
     div.appendChild(img); //adding the image to the div
     div.appendChild(p); //adding the paragraph to the div
-    div.appendChild(pLikes); //adding the like to the div
 
     return div; //returning the div to be added to the container
 }
