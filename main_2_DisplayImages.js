@@ -1,4 +1,4 @@
-import { createIFrame } from "./openImage.js";
+import { createIFrame } from "./biggerImage.js";
 /*
 --Use DOM (document.createElement)
 -Faster fo dynamic content
@@ -44,7 +44,7 @@ function createPar(categories) {
 }
 
 //defining the function to create the div with image and paragraph
-function createDivImg(url, category, likes) {
+function createDivImg(url, category) {
     const div = document.createElement("div"); //creating the div in wich the image and paragraph will be added
     div.classList.add("image"); //adding the class "image" to the div
 
@@ -57,8 +57,7 @@ function createDivImg(url, category, likes) {
     return div; //returning the div to be added to the container
 }
 //defining the function to add images to div container
-export function displayImages(categories, urls, likes) {
-    console.log("LIKES " + likes);
+export function displayImages(categories, urls) {
     const containerImg = document.querySelector(".container"); //selecting the container div
     containerImg.innerHTML = ""; //Deleting the inner HTML of the container, avoid double images
 
@@ -66,7 +65,7 @@ export function displayImages(categories, urls, likes) {
     if (categories.length === urls.length) {
         //this if is a verification
         for (let i = 0; i < categories.length; i++) {
-            containerImg.appendChild(createDivImg(urls[i], categories[i], likes[i])); //adding the images to the container
+            containerImg.appendChild(createDivImg(urls[i], categories[i])); //adding the images to the container
         }
     }
 }

@@ -11,10 +11,10 @@
 
     margin: 5px;
 }
-.bodyDay > div .biggerImage {
+.bodyDay section .biggerImage {
     border-color: var(--second-light-color);
 }
-.bodyNight > div .biggerImage {
+.bodyNight section .biggerImage {
     border-color: var(--second-dark-color);
 }
 .biggerImage button {

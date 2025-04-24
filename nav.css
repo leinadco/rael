@@ -12,6 +12,7 @@ main nav {
 /*style for nav ul to set to flex*/
 nav ul {
     padding: 0;
+    list-style-type: none;
 }
 .bodyDay nav ul {
     border-color: var(--second-light-color);
@@ -28,24 +29,32 @@ nav li {
     cursor: pointer;
     border-color: #ffffff00;
     margin: 0 4px; 
-    padding: 2px 0;
+    padding: 3px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr;
     gap: 1px;
-    justify-items: stretch;
 }
 /*setting style for categories day mode*/
 .bodyDay nav li:hover {
     border-color: var(--third-light-color);
 }
+
 /*setting style for categories night mode*/
 .bodyNight nav li:hover {
     border-color: var(--third-dark-color);
 }
 
 nav ul li span {
-    min-width: 25px;
+    min-width: 20px;
 }
 .active {
     border-color: var(--third-dark-color);
+    animation: makeTextBigger 0.5s forwards;
+}
+@keyframes makeTextBigger {
+    100% {
+        font-size: 1.2em;
+        margin: 4px;
+        font-weight: bold;
+    }
 }
