@@ -1,3 +1,11 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 section {
     border-left: 3px solid;
     border-radius: 10px;
@@ -84,6 +92,7 @@ section {
     border: 3px solid;
     border-left: none;
     border-right: none;
+    animation: fadeIn 1s forwards;
 }
 /*style for single for day mode*/
 .bodyDay .image {

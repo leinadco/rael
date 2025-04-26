@@ -116,14 +116,17 @@ export function filterImages(event) {
     const activeElements = document.querySelector(".active");
     if (activeElements) {
         activeElements.classList.remove("active"); //removing the active class from the header
+        //activeElements.classList.add("deactive")
     }
     let category = "";
     if (event.target.tagName === "SPAN") {
         const parentElement = event.target.parentElement; //getting the parent element of the span
-        parentElement.classList.add("active"); //removing the active class from the header
+        parentElement.classList.add("active"); //adding the active class from the header
+        parentElement.classList.remove("deactive");
         category = parentElement.children[1].textContent.toLowerCase();
     } else if (event.target.tagName === "LI"){
-        event.target.classList.add("active"); //removing the active class from the header
+        event.target.classList.add("active"); //adding the active class from the header
+        parentElement.classList.remove("deactive");
         category = event.target.children[1].textContent.toLowerCase();
     }
     const [categories, urls] = objToArr(oriImages, category); //converting the original immaeges to filtered arrays

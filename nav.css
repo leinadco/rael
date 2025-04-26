@@ -58,3 +58,16 @@ nav ul li span {
         font-weight: bold;
     }
 }
+.deactive {
+    animation: makeTextSmaller 0.5s forwards;
+}
+@keyframes makeTextSmaller {
+    0% {
+        font-size: 1.2em;
+        margin: 4px;
+        font-weight: bold;
+    }
+    100% {
+        margin: 0 4px;
+    }
+}

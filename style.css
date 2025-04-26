@@ -8,15 +8,25 @@
     --second-dark-color: #008800;
     --third-dark-color: #00ff00;
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 * {
     box-sizing: border-box;
     text-align: center;
+    
 }
 /*body style for mode*/
 body {
     margin: auto;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
+    animation: fadeIn 1s forwards;
 }
 /*body style for day mode*/
 .bodyDay {
