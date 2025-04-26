@@ -59,7 +59,7 @@ nav ul li span {
     }
 }
 .deactive {
-    animation: makeTextSmaller 0.5s forwards;
+    animation: makeTextSmaller 0.5s backwards;
 }
 @keyframes makeTextSmaller {
     0% {
