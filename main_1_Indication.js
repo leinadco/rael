@@ -9,7 +9,7 @@ export function renderIndication() {
     let indication =
         '<button class="less indiChild" value="-">Less</button>' +
         '<label class="indiChild"></label>' +
-        '<select id="selection" class="indiChild">'; //creating the select with the onchange event
+        '<select class="selection indiChild">'; //creating the select with the onchange event
 
     //iterating through the options to render
     options.forEach((option) => {
@@ -64,7 +64,7 @@ export function displayIndication(min, max, total) {
 //defining the function to update the selected option in both selects, after a change of the selecte option in the dropdown list
 export function updateSelect(event) {
     //verififing if the event is not undefined and the target is the select, to avoid errors
-    if (event !== "undefined" && event.target.id === "selection") {
+    if (event !== "undefined" && event.target.className === "selection indiChild") {
         let step = Number(event.target.value); //obtaining the selected value from the event
         const selects = document.querySelectorAll(".indication select"); //selecting the selects
 

@@ -10,8 +10,8 @@ section {
     border-left: 3px solid;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: auto;
-    justify-content: space-between;
+    grid-template: auto / 1;
+    align-content: space-between;
 }
 .bodyDay section {
     border-color: var(--second-light-color);
@@ -19,17 +19,17 @@ section {
 .bodyNight section {
     border-color: var(--second-dark-color);
 }
-
+section div {
+}
 /*style buttons and indications*/
 .indication {
     height: 39px;
     margin: 5px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    justify-content: stretch;
     border: 3px solid;
-    border-top: none;
-    border-bottom: none;
+    border-left: none;
+    border-right: none;
     border-radius: 7px;
 }
 .bodyDay .indication {
@@ -50,8 +50,8 @@ section {
     padding: 5px 10px;
     border: 3px solid;
     border-radius: 7px;
-    border-left: none;
-    border-right: none;
+    border-top: none;
+    border-bottom: none;
     background-color: #00000000;
 }
 /*style for day mode*/
@@ -70,13 +70,15 @@ section {
 }
 /*style for images container*/
 .container {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
     margin: 5px;
     padding: 5px;
     border: 3px solid;
-    border-top: none;
-    border-bottom: none;
+    border-left: none;
+    border-right: none;
     border-radius: 10px;
 }
 .bodyDay .container {
@@ -88,10 +90,11 @@ section {
 /*style for single image div*/
 .image {
     border-radius: 10px;
+    padding: 5px;
     display: flex;
     border: 3px solid;
-    border-left: none;
-    border-right: none;
+    border-top: none;
+    border-bottom: none;
     animation: fadeIn 1s forwards;
 }
 /*style for single for day mode*/

@@ -4,6 +4,12 @@ export function createIFrame(event){
     
     if (event.target.src !== "undefined") {
         const biggerElement = document.querySelector("#biggerImage");
+
+        /*const indicationElement = document.querySelector(".indication");
+        console.log(divElement.innerHTML);
+        const divElement = document.createElement("div");
+        divElement.className = "biggerImage";*/
+
         biggerElement.style.display = "";
         biggerElement.innerHTML = "";
 
@@ -11,25 +17,18 @@ export function createIFrame(event){
         const imageCategory = event.target.alt;
 
         let biggerContent = "";
-        //biggerContent += "<div>";
         biggerContent += "<button>Exit</button>";
         biggerContent += `<img src="${imageSource}" alt="${imageCategory.toLowerCase()}">`;
-        //biggerContent += "</div>";
-        biggerContent += `<p>Category = ${imageCategory}</p>`
-        /*const divElement = document.createElement("div");
-        const imgElement = document.createElement("img");
-        imgElement.src = imageSource;
-        imgElement.alt = imageCategory;
-        divElement.appendChild(imgElement);
+        biggerContent += `<p>Category = ${imageCategory}</p>`;
+        
+        /*divElement.innerHTML = biggerContent;
+        indicationElement.nextElementSibling.appendChild(divElement);
+        console.log(divElement.innerHTML);*/
 
-        const parCategory = document.createElement("p");
-        parCategory.innerHTML = "Category: " + imageCategory.toUpperCase();
-
-        biggerElement.appendChild(divElement);
-        biggerElement.appendChild(parCategory);*/
         biggerElement.innerHTML = biggerContent;
         biggerElement.className = "biggerImage";
         const biggerButton = document.querySelector("#biggerImage button");
+
         biggerButton.addEventListener("click", exitBigger);
         console.log("YES");
         console.log(imageSource);

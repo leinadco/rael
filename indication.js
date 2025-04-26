@@ -113,14 +113,14 @@ export function activImg(event = "undefined") {
 }
 //defining the function to filter the images
 export function filterImages(event) {
-    const activeElements = document.querySelector(".active");
-    const deactiveElements = document.querySelector(".deactive");
-    if (activeElements) {
-        activeElements.classList.remove("active"); //removing the active class from the header
-        activeElements.classList.add("deactive"); //adding the deactive class from the header
+    const activeElement = document.querySelector(".active");
+    if (activeElement) {
+        activeElement.classList.remove("active"); //removing the active class from the header
+        activeElement.classList.add("deactive"); //adding the deactive class from the header
     }
-    if  (deactiveElements) {
-        deactiveElements.classList.remove("deactive"); //removing the deactive class from the header
+    const deactiveElement = document.querySelector(".deactive");
+    if (deactiveElement) {
+        deactiveElement.classList.remove("deactive"); //removing the deactive class from the header
     }
     let category = "";
     if (event.target.tagName === "SPAN") {
