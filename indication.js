@@ -113,23 +113,42 @@ export function activImg(event = "undefined") {
 }
 //defining the function to filter the images
 export function filterImages(event) {
-    const activeElement = document.querySelector(".active");
-    if (activeElement) {
-        activeElement.classList.remove("active"); //removing the active class from the header
-        activeElement.classList.add("deactive"); //adding the deactive class from the header
-    }
-    const deactiveElement = document.querySelector(".deactive");
-    if (deactiveElement) {
-        deactiveElement.classList.remove("deactive"); //removing the deactive class from the header
-    }
     let category = "";
     if (event.target.tagName === "SPAN") {
-        const parentElement = event.target.parentElement; //getting the parent element of the span
-        parentElement.classList.add("active"); //adding the active class from the header
-        category = parentElement.children[1].textContent.toLowerCase();
-    } else if (event.target.tagName === "LI"){
-        event.target.classList.add("active"); //adding the active class from the header
-        category = event.target.children[1].textContent.toLowerCase();
+        const parentElement = event.target.parentElement; //getting the parent element of the spanconsole.log(event.target.parentElement.tagName);
+        if (parentElement.classList.contains("active")) {
+            //if the active element is already active, do nothing
+            return;
+        } else {
+            const activeElement = document.querySelector(".active");
+            if (activeElement) {
+                activeElement.classList.remove("active"); //removing the active class from the header
+            }
+            const deactiveElement = document.querySelector(".deactive");
+            if (deactiveElement) {
+                deactiveElement.classList.remove("deactive"); //removing the deactive class from the header
+            }
+            activeElement.classList.add("deactive"); //adding the deactive class from the header
+            parentElement.classList.add("active"); //adding the active class from the header
+            category = parentElement.children[1].textContent.toLowerCase();
+        }
+    } else if (event.target.tagName === "LI") {
+        if (event.target.classList.contains("active")) {
+            //if the active element is already active, do nothing
+            return;
+        } else {
+            const activeElement = document.querySelector(".active");
+            if (activeElement) {
+                activeElement.classList.remove("active"); //removing the active class from the header
+            }
+            const deactiveElement = document.querySelector(".deactive");
+            if (deactiveElement) {
+                deactiveElement.classList.remove("deactive"); //removing the deactive class from the header
+            }
+            activeElement.classList.add("deactive"); //adding the deactive class from the header
+            event.target.classList.add("active"); //adding the active class from the header
+            category = event.target.children[1].textContent.toLowerCase();
+        }
     }
     const [categories, urls] = objToArr(oriImages, category); //converting the original immaeges to filtered arrays
     displayImages(categories, urls, 0); //displaying the filtered images
@@ -160,7 +179,8 @@ export function renderCategories(oriImages, header) {
                 categoriesO[oriCategories[i]] = ["number:"];
                 categoriesO[oriCategories[i]].push(1);
             } else {
-                categoriesO[oriCategories[i]][1] = categoriesO[oriCategories[i]][1] + 1;
+                categoriesO[oriCategories[i]][1] =
+                    categoriesO[oriCategories[i]][1] + 1;
             }
             if (!categories.includes(oriCategories[i])) {
                 categories.push(oriCategories[i]);
@@ -171,10 +191,18 @@ export function renderCategories(oriImages, header) {
     categories.unshift("all"); //adding "all" to the categories
     for (let i = 0; i < categories.length; i++) {
         if (categories[i] === "all") {
-            nav += `<li><span style="text-align:left;">${Object.keys(oriImages).length}</span><span style="text-align:right;">${categories[i].toUpperCase()}</span></li>`; //adding the categories to the unordered list
+            nav += `<li><span style="text-align:left;">${
+                Object.keys(oriImages).length
+            }</span><span style="text-align:right;">${categories[
+                i
+            ].toUpperCase()}</span></li>`; //adding the categories to the unordered list
         } else {
-            nav += `<li><span style="text-align:left;">${categoriesO[categories[i]][1]}</span><span style="text-align:right;">${categories[i].toUpperCase()}</span></li>`; //adding the categories to the unordered list
-        }//adding the categories to the unordered list
+            nav += `<li><span style="text-align:left;">${
+                categoriesO[categories[i]][1]
+            }</span><span style="text-align:right;">${categories[
+                i
+            ].toUpperCase()}</span></li>`; //adding the categories to the unordered list
+        } //adding the categories to the unordered list
     }
     nav += "</ul></div>"; //closing the unordered list
     header.innerHTML = nav; //adding the unordered list to the navigation

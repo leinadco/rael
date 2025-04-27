@@ -19,7 +19,7 @@ export function createIFrame(event){
         let biggerContent = "";
         biggerContent += "<button>Exit</button>";
         biggerContent += `<img src="${imageSource}" alt="${imageCategory.toLowerCase()}">`;
-        biggerContent += `<p>Category = ${imageCategory}</p>`;
+        biggerContent += `<p>Category: <br>${imageCategory}</p>`;
         
         /*divElement.innerHTML = biggerContent;
         indicationElement.nextElementSibling.appendChild(divElement);

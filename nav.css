@@ -60,7 +60,6 @@ nav ul li span {
 }
 .deactive {
     animation: makeTextSmaller 1s backwards;
-    background-color: aliceblue;
 }
 @keyframes makeTextSmaller {
     0% {

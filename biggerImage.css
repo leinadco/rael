@@ -1,22 +1,26 @@
 .biggerImage {
     position: relative;
-    height: 60vb;
 
     display: grid;
-    grid-template: 1fr / 7fr 3fr;
+    grid-template-columns: 7fr 3fr;
     align-items: center;
     
     border: 3px solid;
+    border-left: none;
+    border-right: none;
     border-radius: 12px;
 
+    
     margin: 5px;
+    padding: 5px;
 }
 .bodyDay section .biggerImage {
-    border-color: var(--second-light-color);
+    border-color: var(--third-light-color);
 }
 .bodyNight section .biggerImage {
-    border-color: var(--second-dark-color);
+    border-color: var(--third-dark-color);
 }
+
 .biggerImage button {
     position: absolute;
     top: 0;
@@ -29,7 +33,6 @@
 }
 
 .biggerImage img {
-    max-height: 57vb;
     max-width: 100%;
     border-radius: 10px;
 }
